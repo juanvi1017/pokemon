@@ -1,0 +1,56 @@
+
+  .sectionContainer {
+    min-height: '100vh';
+    color: black;
+    text-align: center;
+  }
+  .sectionImageLogo {
+    height: '170px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    margin-bottom: '90px';
+  }
+  .sectionImage {
+    height: '150px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center'
+  }
+  .sectionNotification {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-size: '30px'
+  }
+  .sectionMsg {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-style: 'italic';
+    font-size: '20px'
+  }
+  .sectionButton {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-style: 'italic';
+    font-size: '20px'
+  }
+
+  .createButton {
+    color: '#fff';
+    font-weight: 'normal';
+    margin-top: '1rem';
+    margin-bottom: '1rem';
+    margin-right: '1.1rem';
+    border: '1px solid';
+    border-color: '#00C052';
+    width: '120px';
+    height: '50px';
+    border-radius: '30px'
+  }
+

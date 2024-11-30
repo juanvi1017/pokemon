@@ -1,0 +1,11 @@
+.appBar {
+    position: relative;
+}
+.appBarTitle {
+    margin-left: 20px;
+    flex: 1;
+    color: white;
+}
+.css-hyum1k-MuiToolbar-root{
+    background-color: #8f8c8c !important;
+}
