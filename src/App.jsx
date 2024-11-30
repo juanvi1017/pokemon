@@ -20,12 +20,12 @@ function App() {
                 <Route path="/" element={<Landing />} />
                 <Route path="/pokemonv2" element={<PokemonV2 />} />
                 <Route path="/pokemon" element={<Pokemon />} />
+                <Route path="*" element={<Error />} />
               </Routes>
             </React.Suspense>
           </AdminPage>
         )}>
         </Route>
-        <Route path="*" element={<Error />} />
       </Routes >
     </Router >
   )

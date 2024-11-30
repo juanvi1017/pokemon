@@ -8,7 +8,7 @@ import './Error.css'
 const Error = () => {
 
   return (
-    <Grid container spacing={1} className="sectionContainer" justifyContent="center">
+    <Grid container spacing={1} className="sectionContainer" justifyContent="center" textAlign='center'>
       <Grid sx={{ xs: 12, md: 8}}>
         <div className="sectionImage">
           <img src={ImageError} alt="imagen de error" />
