@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 
+// Uso de react memo para evitar renderizar nuevamente la pagina si no ha tenido cambios
 function Hero() {
   const navigate = useNavigate();
 
@@ -22,5 +23,5 @@ function Hero() {
     </section>
   );
 }
-export default Hero;
+export default React.memo(Hero);
 

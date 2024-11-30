@@ -3,7 +3,8 @@ import pokemon from "../../../assets/images/pokemon.webp"
 import { useNavigate } from "react-router-dom";
 import "./Detail.css";
 
-function Detail(url) {
+// Uso de react memo para evitar renderizar nuevamente la pagina si no ha tenido cambios
+function Detail() {
 
   const navigate = useNavigate();
 
@@ -42,5 +43,5 @@ function Detail(url) {
     </section>
   );
 }
-export default Detail;
+export default React.memo(Detail);
 

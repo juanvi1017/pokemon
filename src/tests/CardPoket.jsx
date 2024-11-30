@@ -1,16 +1,33 @@
-import { describe, it, expect } from 'vitest'
-import { afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
-import { handleNext, handlePrevious, menu, handleChangeFilter, data} from "./test";
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { handleNext, handlePrevious, menu, handleChangeFilter } from "./test";
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/vitest';
 
-import '@testing-library/jest-dom/vitest'
-
-afterEach(() => {
-  cleanup()
-})
+import CardPoke from '../component/pokemon';
 
 
 describe('CardPoket', () => {
+
+  let mockFn = vi.fn();
+  let value = {
+    id: 1,
+    name: 'PIKACHU',
+    img: '',
+    experience: 164,
+    abilities: [],
+    types: []
+  }
+  beforeEach(() => {
+    render(<CardPoke open={true} setOpen={mockFn} size='sm' value={value} />)
+  })
+
+  it('Muestra el NOMBRE del pokemon en la CARD de detalles', () => {
+    const h2 = screen.getByRole('heading', {level: 2});
+    expect(h2).toBeInTheDocument();
+    expect(h2.textContent).toBe('PIKACHU');
+  });
+
+
   it('HandleNext es una función', () => {
     expect(typeof handleNext).toBe('function');
   });

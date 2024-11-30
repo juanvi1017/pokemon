@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
+// Uso de react memo para evitar renderizar nuevamente la pagina si no ha tenido cambios
 function Footer() {
 
   return (
@@ -25,5 +26,5 @@ function Footer() {
     </section>
   );
 }
-export default Footer;
+export default React.memo(Footer);
 

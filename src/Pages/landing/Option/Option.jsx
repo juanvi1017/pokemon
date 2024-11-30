@@ -3,6 +3,7 @@ import search from "../../../assets/images/search.svg"
 import filter from "../../../assets/images/filter.svg"
 import "./Option.css";
 
+// Uso de react memo para evitar renderizar nuevamente la pagina si no ha tenido cambios
 function Option() {
 
   return (
@@ -36,5 +37,5 @@ function Option() {
     </section>
   );
 }
-export default Option;
+export default React.memo(Option);
 
