@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid2';
 // component
 import CardPoke from '../component/pokemon';
 import Alert from '../component/alert';
+import { Loading } from '../component/loading';
 
 // api
 import { get } from '../apirest';
@@ -184,6 +185,9 @@ function PokemonV2() {
                                 </div>
                             }
                         </>
+                    )}
+                    {loading && (
+                        <Loading open={loading} />
                     )}
                 </div>
             </div >

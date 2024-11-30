@@ -15,6 +15,7 @@ import Alert from '../component/alert';
 import RowTable from '../component/table/row-table';
 import HeadTable from '../component/table/head-table';
 import CardPoke from '../component/pokemon';
+import { Loading } from '../component/loading';
 
 // api
 import { get } from '../apirest';
@@ -121,48 +122,54 @@ const Pokemon = () => {
                         />
                     </Grid>
                 </Grid>
-                {data.length > 0 && (
-                    <>
-                        <TableContainer sx={{ overflowX: 'auto' }}>
-                            <Table sx={{ minWidth: 300 }}>
-                                <HeadTable
-                                    rowCount={data.length}
-                                    headLabel={[
-                                        { id: 'name', label: 'Nombre' },
-                                    ]}
+                {loading && (
+                    <Loading open={loading} />
+                )}
+                {!loading && (<>
+                    {data.length > 0 && (
+                        <>
+                            <TableContainer sx={{ overflowX: 'auto' }}>
+                                <Table sx={{ minWidth: 300 }}>
+                                    <HeadTable
+                                        rowCount={data.length}
+                                        headLabel={[
+                                            { id: 'name', label: 'Nombre' },
+                                        ]}
+                                    />
+                                    <TableBody>
+                                        {data.map((row) => (
+                                            <RowTable
+                                                key={row.name}
+                                                name={row.name}
+                                                view={view}
+                                            />
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                            <Stack spacing={2} className='pagination'>
+                                <TablePagination
+                                    component="div"
+                                    rowsPerPageOptions={[20]}
+                                    count={count}
+                                    rowsPerPage={20}
+                                    page={page}
+                                    onPageChange={handleChange}
                                 />
-                                <TableBody>
-                                    {data.map((row) => (
-                                        <RowTable
-                                            key={row.name}
-                                            name={row.name}
-                                            view={view}
-                                        />
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                        <Stack spacing={2} className='pagination'>
-                            <TablePagination
-                                component="div"
-                                rowsPerPageOptions={[20]}
-                                count={count}
-                                rowsPerPage={20}
-                                page={page}
-                                onPageChange={handleChange}
-                            />
-                        </Stack>
-                    </>
+                            </Stack>
+                        </>
+                    )}
+                    {data.length < 1 && (
+                        <div className="card-content-nodata">
+                            <h2 className="card-title">No se encontraron resultados</h2>
+                            <p className="card-description">
+                                Por favor verifique el nombre de su pokemon
+                            </p>
+                        </div>
+                    )}
+                </>
                 )}
             </Card>
-            {data.length < 1 && (
-                <div className="card-content-nodata">
-                    <h2 className="card-title">No se encontraron resultados</h2>
-                    <p className="card-description">
-                        Por favor verifique el nombre de su pokemon
-                    </p>
-                </div>
-            )}
             {openModal && (
                 <CardPoke
                     open={openModal}
