@@ -175,13 +175,13 @@ function PokemonV2() {
                                         </Button>
                                     </div>
                                 </>
-                            ) : <></>
-                                // <div className="card-content-nodata">
-                                //     <h2 className="card-title">No se encontraron resultados</h2>
-                                //     <p className="card-description">
-                                //         Por favor verifique el nombre de su pokemon
-                                //     </p>
-                                // </div>
+                            ) :
+                                <div className="card-content-nodata">
+                                    <h2 className="card-title">No se encontraron resultados</h2>
+                                    <p className="card-description">
+                                        Por favor verifique el nombre de su pokemon
+                                    </p>
+                                </div>
                             }
                         </>
                     )}
