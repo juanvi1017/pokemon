@@ -30,15 +30,14 @@ function PokemonV2() {
     const [openModal, setOpenModal] = useState(false);
     const [data, setData] = useState([])
     const [detail, setDetail] = useState(null)
-    const [page, setPage] = useState(0)
     const [next, setNext] = useState(null)
     const [previous, setPrevious] = useState(null)
     const [search, setSearch] = useState('');
 
-    const getPoke = useCallback(async (pageInfo) => {
+    const getPoke = useCallback(async (url) => {
         setLoading(true)
         // Obtenomos la lista de pokemon
-        const response = await get(`https://pokeapi.co/api/v2/pokemon?offset=${pageInfo * 20}&limit=20`)
+        const response = await get(`${url}`)
         if (response.status === 200) {
             const { results, next, previous } = response.data
             setNext(next)
@@ -91,16 +90,6 @@ function PokemonV2() {
         setLoading(false)
     }, [])
 
-    const handleNext = () => {
-        getPoke(page + 1)
-        setPage(page + 1)
-    }
-
-    const handlePrevious = () => {
-        getPoke(page - 1)
-        setPage(page - 1)
-    }
-
     const view = (e) => {
         setDetail(e);
         setOpenModal(true)
@@ -110,10 +99,10 @@ function PokemonV2() {
     // Evento que escucha los cambios en el input para buscar un pokemon
     const handleChange = (event) => {
         if (event.target.name === "search") {
-            if (event.target.value.length > 3) {
+            if (event.target.value.length > 2) {
                 getPokeSearch(event.target.value)
             } else if (event.target.value.length < 1) {
-                getPoke(page)
+                getPoke('https://pokeapi.co/api/v2/pokemon?limit=20')
             }
             setSearch(event.target.value)
         }
@@ -121,7 +110,7 @@ function PokemonV2() {
 
 
     useEffect(() => {
-        getPoke(page)
+        getPoke('https://pokeapi.co/api/v2/pokemon?limit=20')
     }, [getPoke]);
 
 
@@ -168,10 +157,10 @@ function PokemonV2() {
                                         </div>
                                     ))}
                                     < div className="card-content-nodata">
-                                        <Button onClick={() => handleNext()} variant="contained" disabled={!next ? true : false} className='btn'>
+                                        <Button onClick={() => getPoke(next)} variant="contained" disabled={!next ? true : false} className='btn'>
                                             Next
                                         </Button>
-                                        <Button onClick={() => handlePrevious()} variant="contained" disabled={!previous ? true : false} className='btn'>
+                                        <Button onClick={() => getPoke(previous)} variant="contained" disabled={!previous ? true : false} className='btn'>
                                             Previous
                                         </Button>
                                     </div>

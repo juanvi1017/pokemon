@@ -93,7 +93,7 @@ const Pokemon = () => {
 
     const handleChangeFilter = (event) => {
         if (event.target.name === "search") {
-            if (event.target.value.length > 3) {
+            if (event.target.value.length > 2) {
                 getPokeSearch(event.target.value)
             } else if (event.target.value.length < 1) {
                 getPoke(page)
