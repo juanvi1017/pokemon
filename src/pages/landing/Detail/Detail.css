@@ -1,0 +1,129 @@
+.detail {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.detail .container {
+    position: relative;
+    margin: 20px auto;
+    width: 90%;
+    height: auto;
+}
+
+.detail-text {
+    text-align: center;
+    padding: 20px;
+    height: 500px;
+    min-height: 300px;
+    float: left;
+    width: 50%;
+}
+
+.detail-text h1 {
+    text-align: left;
+    font-size: 46px;
+    margin-top: 20px;
+    color: black;
+}
+.detail-text p {
+    font-size: 54 !important;
+    text-align: left;
+    color: gray;
+}
+
+.detail-text .btn {
+    float: left;
+    margin-top: 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.detail-text .btn:hover {
+    background: #0056b3;
+}
+
+.detail-text img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.detail-text-pokedata {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    min-height: 300px;
+    float: left;
+    width: 100%;
+}
+
+.detail-text-pokedata h1 {
+    line-height: 1;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    color: black;
+}
+.detail-text-pokedata p {
+    line-height: 1;
+    font-size: 54 !important;
+    text-align: center;
+    color: gray;
+}
+
+.detail-text-pokedata .btn {
+    margin-top: 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.detail-text-pokedata .btn:hover {
+    background: #0056b3;
+}
+
+
+@media (max-width: 912px) {
+    .detail-text-pokedata {
+        margin-top: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .detail-text {
+        height: auto;
+        min-height: 300px;
+        float: left;
+        width: 100%;
+    }
+    .detail-text h1 {
+        font-size: 26px;
+    }
+    .detail-text span {
+        font-size: 26px;
+    }
+    .detail-text p {
+        font-size: 18px;
+    }
+    .detail-text img {
+        max-width: 100%;
+        height: auto;
+        float: left;
+    }
+    .detail-text-pokedata {
+        margin-top: 10px;
+    }
+    .detail-text-pokedata h1{
+        font-size: 26px;
+    }
+}

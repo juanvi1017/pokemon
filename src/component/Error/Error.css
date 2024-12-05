@@ -1,0 +1,68 @@
+
+  .sectionContainer {
+    width: 100%;
+    float: left;
+    margin-top: 80px;
+    min-height: '140vh';
+    color: black;
+    text-align: center;
+    background-color: rgb(139, 233, 162);
+  }
+  .sectionImageLogo {
+    height: '170px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    margin-bottom: '90px';
+  }
+  .sectionImage {
+    float: left;
+    width: 100%;
+    height: '150px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center'
+  }
+  .sectionNotification {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-size: '30px'
+  }
+  .sectionMsg {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-style: 'italic';
+    font-size: '20px'
+  }
+  .sectionButton {
+    height: '50px';
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    font-style: 'italic';
+    font-size: '20px'
+  }
+
+  .createButton {
+    color: '#fff';
+    font-weight: 'normal';
+    margin-top: '1rem';
+    margin-bottom: '1rem';
+    margin-right: '1.1rem';
+    border: '1px solid';
+    border-color: '#00C052';
+    width: '120px';
+    height: '50px';
+    border-radius: '30px'
+  }
+
+  .sectionImage img {
+    width: 100%;
+    border-radius: 20px;
+    height: '100vh';
+}
+

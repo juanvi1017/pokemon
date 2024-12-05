@@ -1,0 +1,50 @@
+.option {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.option .container {
+    position: relative;
+    margin: 20px auto;
+    width: 70%;
+    height:300px;
+}
+
+.option-text {
+    text-align: center;
+    padding: 20px;
+    height: 300px;
+    min-height: 300px;
+    float: left;
+    width: 50%;
+}
+
+.option-text h1 {
+    margin-top: 20px;
+    color: black;
+}
+.option-text p {
+    color: gray;
+}
+.option-text img {
+    width: 100px;
+    border-radius: 20px;
+}
+.option-text img:hover {
+
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(47, 238, 8, 0.747), rgba(248, 252, 15, 0.589));
+}
+
+
+@media (max-width: 600px) {
+    .option-text {
+        min-height: 300px;
+        float: left;
+        width: 100%;
+    }
+    .option-text p {
+        text-align: justify;
+    }
+}
