@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import Nav from './component/nav'
+import Nav from './component/Nav'
 
 
 function AdminPage({ children }) {
