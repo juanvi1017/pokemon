@@ -55,7 +55,7 @@ const Nav = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            POKEMON
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -108,7 +108,7 @@ const Nav = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            POKEMON
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
