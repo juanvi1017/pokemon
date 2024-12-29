@@ -7,7 +7,7 @@
 .option .container {
     position: relative;
     margin: 20px auto;
-    width: 70%;
+    width: 90%;
     height:300px;
 }
 
@@ -26,23 +26,29 @@
 }
 .option-text p {
     color: gray;
+    font-size: 18px;
 }
 .option-text img {
     width: 100px;
     border-radius: 20px;
 }
 .option-text img:hover {
-
     border-radius: 20px;
     background-image: linear-gradient(rgba(47, 238, 8, 0.747), rgba(248, 252, 15, 0.589));
 }
 
 
 @media (max-width: 600px) {
+    .option-text img {
+        width: 90%;
+        margin: 0 auto;
+        height: 120px;
+    }
     .option-text {
         min-height: 300px;
         float: left;
         width: 100%;
+        text-align: justify;
     }
     .option-text p {
         text-align: justify;
